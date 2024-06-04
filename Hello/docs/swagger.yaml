@@ -1,0 +1,31 @@
+basePath: /
+definitions:
+  Model.HelloWorldResponse:
+    properties:
+      Output:
+        example: Hello World
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: A three tier architecture that outputs hello world
+  title: Documenting API (Hello World)
+  version: 1.0.0
+paths:
+  /HelloWorld:
+    get:
+      consumes:
+      - application/json
+      description: Handles http request,Asks data from model and returns "Hello World"
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Model.HelloWorldResponse'
+      summary: Handler for localhost:8080/HelloWorld
+      tags:
+      - Controller
+swagger: "2.0"
